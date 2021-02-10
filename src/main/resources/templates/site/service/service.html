@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+</head>
+<body data-layout-fragment="contentSite">
+
+	<section id="services" class="service-item">
+	   <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Services</h2>
+                <p class="lead">Avec TP-21-SOLUTION, Nous vous offrons des meilleurs services dans divers domaines.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6 col-md-4" th:each="service : ${listeSer}">
+                    <div class="media services-wrap wow fadeInDown">
+                        <div class="pull-left">
+                            <img style="width: 300px; height: 150px;"
+                            th:src="@{getPhotiService(photiService=${service.photiService})}"
+                            class="img-responsive">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading" th:text=${service.titre_ser}></h3>
+                            <p th:text=${service.libelle_ser}> </p>
+                              <a th:href="@{footerService(id_ser=${service.id_ser})}" > détail...</a>
+                        </div>
+                        <div>
+                        	
+                        </div>
+                    </div>
+                </div>
+
+                                                              
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+
+	
+	
+</body>
+</html>

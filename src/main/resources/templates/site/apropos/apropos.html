@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+
+</head>
+<body data-layout-fragment="contentSite">
+<section id="feature" class="transparent-bg">
+		<div class="container" >
+			
+
+			<div style="margin: 50px;" class="clients-area center wow fadeInDown">
+				<h2>Qui sommes nous?</h2>
+				<p class="lead" >Nous sommes des freelance, on developpe des site internet, des application mobile, offrons des formation, developpons des logiciel sur mesure ou d'autres services en informatique</p>
+			</div>
+
+			<div class="row" >
+				<div class="col-md-4 wow fadeInDown" th:each="liste : ${listeApp}">
+					<div class="clients-comments text-center">
+						
+						<a th:href="@{getImage_app(image_app=${liste.image_app})}" rel="prettyPhoto"> <img th:src="@{getImage_app(image_app=${liste.image_app})}" class="img-circle" alt=""></a>
+						<h2 th:text="${liste.titre_bloc_app}"></h2>
+						<h3 th:text="${liste.infos_app}"></h3>
+						
+					</div>
+				</div>
+			
+			</div>
+			
+			
+			<hr>
+			<div class="team">
+			
+			<div class="row clearfix">
+					<div class="col-md-4 col-sm-6 " th:each="liste : ${listeApp2}">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object imgyan" th:src="@{getImage_app2(image_app2=${liste.image_app2})}" alt=""></a>
+								</div>
+								<div class="media-body">
+										<br>
+									<h4 th:text="${liste.titre_app2}"></h4>
+									
+								</div>
+							</div><!--/.media -->
+						
+							<p th:text="${liste.libelle_app2}"></p>
+						</div>
+					</div><!--/.col-lg-4 -->
+					
+					
+					<!-- <div class="col-md-4 col-sm-6 ">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object imgyan" src="/images/tum-strategy.jpg" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Passion</h4>
+									
+									
+								</div>
+							</div>/.media
+							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+						</div>
+					</div>/.col-lg-4	 -->
+					
+					<!-- <div class="col-md-4 col-sm-6 ">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object imgyan" src="/images/tum-vision.jpg" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Vision</h4>
+						
+									
+								</div>
+							</div>/.media
+							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+						</div>
+					</div>/.col-lg-4	 -->				
+				</div> <!--/.row -->
+				</div>
+		</div><!--/.container-->
+	</section><!--/#feature-->
+
+			
+
+</body>
+</html>

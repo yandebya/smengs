@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+</head>
+<body data-layout-fragment="contentSite">
+
+<section id="contact-page">
+        <div class="container">
+            <div class="center centontact">        
+                <h2>Drop Your Message</h2>
+                <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div> 
+           
+            <div class="row contact-wrap"> 
+            
+                <div class="status alert alert-success" style="display: none"></div>
+                <form  method="post" th:action="@{creerContact}">
+                   <div  th:field="${creationContact.id_cont}"></div>
+                    <div class="col-sm-5 col-sm-offset-1">
+                    
+                   
+                    <div>
+                             
+                              <span class="contactInfos">Nos coordonés</span>
+                                <div class="contactInfosCord">
+                              		 <h3>rotayandebya@gmail.com</h3>                      
+                              		 <h3>gonyahbetchoubeu@gmail.com</h3>
+                              		 
+                                     <h3>(+235) 63 47 41 40</h3>
+                           			 <h3>(+235) 62 07 02 91</h3>
+                              		 <h3>N'Djamena TCHAD</h3>  
+                    			</div> 
+                      
+                    </div>
+                    </div>
+                    <div class="col-sm-5">
+                    	<div class="form-group">
+                          
+                            <input placeholder="Nom Prenom *" type="text" th:field="${creationContact.nom_cont}" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                       
+                            <input placeholder="Email *" type="email"th:field="${creationContact.email_cont}" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                       
+                            <input placeholder="Numero de telephone" type="number" th:field="${creationContact.phone_cont}" class="form-control">
+                        </div>
+                           
+                        <div class="form-group">
+                            
+                            <input placeholder="Objet de votre message *" type="text" name="subject" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            
+                            <textarea placeholder="Message *" name="message" th:field="${creationContact.message_cont}" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>                        
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" >Valider</button>
+                        </div>
+                    </div>
+                </form> 
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+
+    
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+
+</head>
+<body data-layout-fragment="contentSite">
+<section id="feature" class="transparent-bg">
+		<div class="container" >
+			
+
+			<div style="margin: 50px;" class="clients-area center wow fadeInDown">
+				<h2>Qui sommes nous?</h2>
+				<p class="lead" >Nous sommes des freelance, on developpe des site internet, des application mobile, offrons des formation, developpons des logiciel sur mesure ou d'autres services en informatique</p>
+			</div>
+
+			<div class="row" >
+				<div class="col-md-4 wow fadeInDown" th:each="liste : ${listeApp}">
+					<div class="clients-comments text-center">
+						
+						<a th:href="@{getImage_app(image_app=${liste.image_app})}" rel="prettyPhoto"> <img th:src="@{getImage_app(image_app=${liste.image_app})}" class="" alt=""></a>
+						<h2 th:text="${liste.titre_bloc_app}"></h2>
+						<h3 th:text="${liste.infos_app}"></h3>
+						
+					</div>
+				</div>
+			
+			</div>
+			
+
+		</div><!--/.container-->
+	</section><!--/#feature-->
+
+			
+
+</body>
+</html>

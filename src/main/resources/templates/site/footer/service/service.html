@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+</head>
+<body data-layout-fragment="contentSite">
+
+	<section id="services" class="service-item">
+	   <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Services</h2>
+                <p class="lead">Avec TP-21-SOLUTION, Nous vous offrons des meilleurs services dans divers domaines.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-12 col-md-6" th:each="service : ${service}">
+                    <div class="media services-wrap wow text-center fadeInDown">
+                        <div class="pull-left">
+                            <img style="width: 500px; height: 350px;"
+                            th:src="@{getPhotiService(photiService=${service.photiService})}"
+                            class="img-responsive">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading" th:text=${service.titre_ser}></h3>
+                            <p th:text=${service.libelle_ser}></p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-sm-12 col-md-6" th:each="service : ${service}">
+                    <div class="media services-wrap wow fadeInDown">
+                        <div class="pull-left">
+                           
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading" th:text=${service.titre_ser}></h3>
+                            <p th:text=${service.detail_ser}></p>
+                        </div>
+                    </div>
+                </div>
+
+                                                              
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+
+	
+	
+</body>
+</html>

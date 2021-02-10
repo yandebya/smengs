@@ -1,0 +1,98 @@
+<meta charset="utf-8">
+<div class="bott" data-th-fragment="fFooter" xmlns:th="http://wwwthymeleaf.org">
+
+<section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget">
+                        <h3>It-21-Solution</h3>
+                        <ul>
+                            <li><a th:href="@{listeAppSite}">a propos</a></li>
+                            <li><a th:href="@{footerRencontre}">Nous rencontrer</a></li>
+                            <li><a th:href="@{footerEquipe}">Equipe</a></li>
+                                               
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a th:href="@{footerFaq}">Faq</a></li>
+                            <li><a th:href="@{footerForum}">Forum</a></li>
+                            <li><a th:href="@{footerDocument}">Documentation</a></li>                          
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-4 col-sm-6" >
+                    <div class="widget">
+                        <h3>Nos services</h3>
+                        <ul th:each="liste : ${listeSer}">
+                            <li><a th:href="@{footerService(id_ser=${liste.id_ser})}" th:text="${liste.titre_ser}"></a></li>
+                           
+       
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+<!--                 <div class="col-md-3 col-sm-6"> -->
+<!--                     <div class="widget"> -->
+<!--                         <h3> Nos partenaires </h3> -->
+<!--                         <ul> -->
+<!--                             <li><a href="#">Adipisicing Elit</a></li> -->
+<!--                             <li><a href="#">Eiusmod</a></li> -->
+<!--                             <li><a href="#">Tempor</a></li> -->
+<!--                             <li><a href="#">Veniam</a></li>                            -->
+<!--                         </ul> -->
+<!--                     </div>     -->
+<!--                 </div>/.col-md-3 -->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+	
+	<div class="top-bar">
+		<div class="container">
+			<div class="row">
+			    <div class="col-lg-12">
+				   <div class="social">
+						<ul class="social-share">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+						</ul>
+				   </div>
+                </div>
+			</div>
+		</div><!--/.container-->
+	</div><!--/.top-bar-->
+
+
+<footer id="footer" class="midnight-blue" >
+         
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">bootstraptaste</a>. All Rights Reserved.
+                </div>
+                <!-- 
+                    All links in the footer should remain intact. 
+                    Licenseing information is available at: http://bootstraptaste.com/license/
+                    You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Gp
+                -->
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a th:href="@{homeSite}">Accueil</a></li>
+                        <li><a th:href="@{homeSite}">A propos</a></li>
+                       <!--  <li><a href="#">Faq</a></li> -->
+                        <li><a th:href="@{homeSite}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+    </div>
