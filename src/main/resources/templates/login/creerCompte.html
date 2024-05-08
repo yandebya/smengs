@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+
+<head>
+	<meta charset="utf-8">
+	<title>compte</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/register/css/roboto-font.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/register/fonts/font-awesome-5/css/fontawesome-all.min.css}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" th:href="@{/css/register/css/style.css}"/>
+</head>
+
+<body class="form-v5" data-layout-fragment="contentSite">
+	<div class="page-content">
+		<div class="form-v5-content">
+			<form class="form-detail" th:action="@{/index/creationCandidat}" method="post">
+				<h2 class="center" style="color:#bbb8b8;"> Créer votre compte</h2>
+				
+				<div class="form-row">
+					<label for="full-name"><a>Nom</a></label>
+					<input type="text" name="full-name" id="full-name" th:field="${candidat.Nom_utiliseur}" class="input-text" placeholder="votre nom" required>
+					
+				</div>
+				<div class="form-row">
+					<label for="full-name"><a>Prenom</a></label>
+					<input type="text" name="full-name" id="full-name" th:field="${candidat.prenom_utilisateur}" class="input-text" placeholder="votr prenom" required>
+				
+				</div>
+				<div class="form-row">
+					<label for="full-name"><a>E-mail</a></label>
+					<input type="email" name="full-name" id="full-name"  th:field="${candidat.email_utilisateur}" class="input-text" placeholder="votre e-mail" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"> 
+					
+				</div>
+				
+				<!--  <div class="form-row" >
+								    	  <label>Domaine</label>
+                                           <select th:field="${categorie.id_cat}" class="input-text">
+													<option th:each="liste: ${listeCategorie}" 									
+															th:value="${liste.id_cat}"
+															th:text="${liste.libelle_cat}" >
+													</option>
+											</select> 
+								    	</div>  -->
+				
+				<div class="form-row">
+					<label for="your-email"><a>Username</a></label>
+					<input type="text" name="your-email" id="" th:field="${candidat.username}" class="input-text" placeholder="username" required >
+					
+				</div>
+				<div class="form-row">
+					<label for="password"><a>Password</a></label>
+					<input type="password" name="password" th:field="${candidat.password}" id="password" class="input-text" placeholder="mot de passe" required>
+				
+				</div>
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -60,3 +60,9 @@ $(function() {
         }
     })
 })
+
+$(document).ready(function() {
+
+	 $("#editor2").richText();
+	 $("#editor1").richText();
+});

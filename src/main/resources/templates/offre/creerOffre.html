@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>service</title>
+
+
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+			 <div class="row">
+                 <!--  page header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables</h1>
+                </div>
+                 <!-- end  page header -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           Offre
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                        <div class="col-lg-12">
+                                    <form role="form" th:action="@{creationOffre}" method="post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label>Libelle Offre</label>
+                                            <input class="form-control" th:field="${Offre.libelle_off}">
+                                           
+                                        </div>
+                                        <input type="hidden"  th:field="${Offre.id_off}">
+                                      <!--   <div class="form-group">
+                                            <label>Desciption Offre</label>
+                                           <input class="form-control" th:field="${Offre.description_off}">
+                                           
+                                        </div> -->
+                                     <div class="form-group" >
+								    	  <label>Domaine</label>
+                                           <select type="hidden" th:field="${domaine.id_domaine}" class="form-control col-md-7 col-xs-12">
+													<option th:each="liste: ${listeDomaine}" 									
+															th:value="${liste.id_domaine}"
+															th:text="${liste.libelle_domaine}" >
+													</option>
+											</select> 
+								    	</div> 
+                                        <div class="form-group" >
+								    	  <label>Categorie</label>
+                                           <select type="hidden" th:field="${categorie.id_cat}" class="form-control col-md-7 col-xs-12">
+													<option th:each="liste : ${listeCategorie}" 									
+															th:value="${liste.id_cat}"
+															th:text="${liste.libelle_cat}" >
+													</option>
+											</select> 
+								    	</div> 
+								    	
+								    <div class="centrer"><label>Photo </label></div>
+						              <div class="centrer">
+									    <input type="file" id="image" name="picture" required="required"/>  
+									</div>
+								    	 
+								    	<!-- <div class="form-group" >
+								    	  <label>Utilisateur</label>
+                                           <select type="hidden" th:field="${Utilisateur.id_utilisateur}" class="form-control col-md-7 col-xs-12">
+													<option th:each="liste : ${listeUtilisateur}" 									
+															th:value="${liste.id_utilisateur}"
+															th:text="${liste.prenom_utilisateur}" >
+													</option>
+											</select> 
+								    	</div> -->
+
+
+									 <label >description</label>
+									    <textarea name="content" id="editor2" th:field="${Offre.description_off}">
+									      
+									    </textarea>
+									  <hr>
+									  <br>
+									    
+									<button type="submit" class="btn btn-primary"> Valider</button>
+                                        <button type="reset" class="btn btn-success">Annuler</button>
+                                    </form>
+                                    
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            
+            
+
+            
+
+        </div>
+
+</body>
+</html>

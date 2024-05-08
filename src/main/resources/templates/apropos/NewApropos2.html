@@ -9,7 +9,7 @@
 			 <div class="row">
                  <!--  page header -->
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
+                    <h1 class="page-header">Apropos</h1>
                 </div>
                  <!-- end  page header -->
             </div>
@@ -18,23 +18,23 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Advanced Tables
+                             a propos de nous
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                                     <form role="form" th:action="@{creerApropos2}" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label>Text Input</label>
+                                            <label>Titre</label>
                                             <input class="form-control" th:field="${apropos2.titre_app2}">
-                                            <p class="help-block">Example block-level help text here.</p>
+                                          
                                         </div>
                                         
                                     
-                                        
+                                        <input type="hidden"  th:field="${apropos2.id_app2}">
                                        
                                         <div class="form-group">
-                                            <label>Text area</label>
+                                            <label>Description</label>
                                             <textarea th:field="${apropos2.libelle_app2}" class="form-control" rows="3"></textarea>
                                         </div>
   
@@ -42,8 +42,9 @@
                                         	<label>Image</label>
                                         	<input type="file" id="image" name="picture" />
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit Button</button>
-                                        <button type="reset" class="btn btn-success">Reset Button</button>
+                                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                                        <button type="reset" class="btn btn-success">Annuler</button>
+                                        <a data-th-href="@{/apropos/listeApp2}" class="btn btn-warning">Liste</a>
                                     </form>
                                 </div>
                         </div>

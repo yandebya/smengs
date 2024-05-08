@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>apropos</title>
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+			 <div class="row">
+                 <!--  page header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables aprops</h1>
+                </div>
+                 <!-- end  page header -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                          apropos de nous
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                             <a data-th-href="@{/apropos/creationApropos2}" class="btn btn-success  fa fa-plus">Ajouter</a>
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                        
+                                             <th>Libelle </th>
+                                              <th>Action </th>
+                                          
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      
+                                        <tr class="gradeU" th:each="liste : ${listeApropos1}">
+                                           
+                                           <td th:utext="${liste.libelle_propos1}"></td>
+                                           <td> <img th:src="@{getImage_propos1(image_propos1=${liste.image_propos1})}"width="80" height="80"></td>
+                                          
+                                         
+                                            <span sec:authorize="hasRole('ADMIN') or hasRole('SUPERADMIN')"> 
+                                            <td>
+                                            	 <a title="supprimer"   th:href="@{/apropos1/supprimerApp2(id_propos1=${liste.id_propos1})}"
+                                            	 					
+                       											     class="btn btn-danger btn-xs delBtn"><i class="fa fa-trash-o"></i> </a>  
+                       											     
+                       											      <a  title="modifier"  th:href="@{/apropos1/editerApp2(id_propos1=${liste.id_propos1})}"
+                            	
+									                             	 class="btn btn-success btn-xs eBtn"><i class="fa fa-pencil"></i> 
+									                             </a> 
+                                            </td>
+                                           </span>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+            
+
+        </div>
+</body>
+</html>

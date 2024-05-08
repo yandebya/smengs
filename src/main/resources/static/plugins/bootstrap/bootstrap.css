@@ -5782,4 +5782,37 @@ button.close {
     display: none !important;
   }
 }
+
+/* hanana service bootstrap class*/
+.couleur-primary {
+  color: #ffffff;
+  background-color: #17a2b8;
+  border-color: #d6e9c6;
+}
+.couleur-warning {
+  color: #ffffff;
+  background-color: #e5ad06;
+  border-color: #d6e9c6;
+}
+.couleur-danger {
+  color: #ffffff;
+  background-color:#dc3545;
+  border-color: #d6e9c6;
+}
+.couleur-success {
+  color: #ffffff;
+  background-color: #28a745;
+  border-color: #d6e9c6;
+}
+.couleur-silver {
+  color: #ffffff;
+  background-color: #606a71;
+  border-color: #d6e9c6;
+}
+.couleur-blue {
+  color: #ffffff;
+  background-color: #1e282c;
+  border-color: #d6e9c6;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

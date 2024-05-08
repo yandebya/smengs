@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+</head>
+<body data-layout-fragment="contentSite">
+
+	<section id="services" class="service-item">
+	   <div class="container">
+            <div class="center wow fadeInDown">
+                <h2><a>Offres</a></h2>
+             
+            </div>
+
+			<div class="row">
+				<div style="font-size: 48px; color: #e8b47b; text-align: center;"
+					th:if="${listeOffre.empty}">Aucune offre</div>
+
+
+
+			</div>
+			<!--/.row-->
+			
+			
+				<div  class="responsive col-sm-10 col-md-10" th:each="liste: ${listeOffre}">
+	                    <div class="media services-wrap wow fadeInDown">
+	                       <!--  <div class="pull-left">
+	                            <img class="img-responsive" style="width:70px; height:60px;" alt="" th:src="@{/getPhoto_off(photo_off=${liste.photo_off})}">
+	                        </div> -->
+	                        <div class="media-body responsive">
+	                            <h3 class="media-heading" th:text="${liste.libelle_off}"></h3>
+	                            <p ></p>
+	                            <div  th:utext="${liste.description_off}"></div>
+	                            <br>
+	                            
+	                             <p> <a href="mailto:contact@hanana-service.com" >Postuler</a></p>
+	                        </div>
+	                    </div>
+	                </div>
+	        
+	          
+		</div><!--/.container-->
+    </section><!--/#services-->
+
+
+	
+	
+</body>
+</html>
+
+
+
+

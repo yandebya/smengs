@@ -9,15 +9,17 @@
     
     
     <!-- Core CSS - Include with every page -->
-    <link href="/plugins/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
-    
-   	  <link href="/css/style.css" rel="stylesheet" />
-      <link href="/css/main-style.css" rel="stylesheet" />
+    <link th:href="@{/plugins/bootstrap/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link th:href="@{/plugins/pace/pace-theme-big-counter.css}" rel="stylesheet" />
+    <link th:href="@{/plugins/timeline/timeline.css}" rel="stylesheet" />
+   	  <link th:href="@{/css/style.css}" rel="stylesheet" />
+      <link th:href="@{/css/main-style.css}" rel="stylesheet" />
+      <link th:href="@{/plugins/dataTables/dataTables.bootstrap.css}" rel="stylesheet" />
       
-     
-    
+      
+      <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}"/>
+
 
 </head>
 
@@ -38,17 +40,26 @@
     </div>
     <!-- end wrapper -->
 
+
+
+	
+
     <!-- Core Scripts - Include with every page --> 
-    <script src="/plugins/jquery-1.10.2.js"></script>
-    <script src="/plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/plugins/pace/pace.js"></script>
-    <script src="/scripts/siminta.js"></script>
-     <script src="/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script th:src="@{/plugins/jquery-1.10.2.js}"></script>
+    <script th:src="@{/plugins/bootstrap/bootstrap.min.js}"></script>
+    <script th:src="@{/plugins/metisMenu/jquery.metisMenu.js}"></script>
+    <script th:src="@{/plugins/pace/pace.js}"></script>
+    <script th:src="@{/scripts/siminta.js}"></script>
+     <script th:src="@{/plugins/dataTables/jquery.dataTables.js}"></script>
+    <script th:src="@{/plugins/dataTables/dataTables.bootstrap.js}"></script>
+    
+     <script  th:src="@{/richtext/jquery.richtext.min.js}"></script> 
+    
        <script>
         $(document).ready(function () {
             $('#dataTables-example').dataTable();
+            
+         
         });
     </script>
 

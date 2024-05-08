@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>service</title>
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+			 <div class="row">
+                 <!--  page header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables</h1>
+                </div>
+                 <!-- end  page header -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           Partenaire
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                        <div class="col-lg-12">
+                                    <form role="form" th:action="@{creationPartenaire}" method="post" enctype="multipart/form-data">
+                                       
+                                       <input type="hidden" th:field="${partenaire.id_part}">
+                                        <div class="form-group">
+                                            <label>Partenaire</label>
+                                            <input class="form-control" th:field="${partenaire.libelle_part}">
+                                           
+                                        </div>
+							<div class="item form-group">
+								    <div class="centrer"><label>Photo </label></div>
+						              <div class="centrer">
+									    <input type="file" id="image" name="picture" />  
+									</div>
+								</div>    	 
+								    	
+								    	
+                                        <button type="submit" class="btn btn-primary"> Valider</button>
+                                        <button type="reset" class="btn btn-success">Annuler</button>
+                                         <a data-th-href="@{/listePartenaire}" class="btn btn-warning">Liste</a>
+                                    </form>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+            
+
+        </div>
+</body>
+</html>

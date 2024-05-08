@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>saisie cat</title>
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+			 <div class="row">
+                 <!--  page header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables</h1>
+                </div>
+                 <!-- end  page header -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             Advanced Tables
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                        <div class="col-lg-6">
+                                    <form role="form" th:action="@{creationApropos1}" method="post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label>A propos de hanana service</label>
+                                            <textarea class="form-control" id="editor1" th:field="${apropos1.libelle_propos1}"></textarea>
+                                           
+                                        </div>
+                                        
+                                    
+                                        <input type="hidden"  th:field="${apropos1.id_propos1}">
+                                       
+                                   
+  
+                                        <div class="form-group">
+                                        	<label>Image</label>
+                                        	<input type="file" id="image" name="picture" />
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">ajouter</button>
+                                        <button type="reset" class="btn btn-success">annuler</button>
+                                    </form>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+            
+
+        </div>
+</body>
+</html>

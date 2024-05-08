@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>saisie cat</title>
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+
+
+            <div class="row">
+                <!-- Page Header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Accueil</h1>
+                </div>
+                <!--End Page Header -->
+            </div>
+
+            <div class="row">
+                <!-- Welcome -->
+                <div class="col-lg-12">
+                    <div class="alert alert-info">
+                        <i class="fa fa-folder-open"></i><b>&nbsp;Bonjour <span th:text="${utilisateur.Nom_utiliseur}"></span></b> Bienvenue dans l'espace administrateur du site SMENGS<b> </b>
+
+                    </div>
+                </div>
+                <!--end  Welcome -->
+            </div>
+
+
+            <div class="row">
+                <!--quick info section -->
+               
+                <div class="col-lg-4">
+                 <a style="text-decoration: none"  th:href="@{/listeDomaine}">
+                    <div class="alert couleur-success text-center">
+                        <i class="fa  fa-book fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  th:text="${nombreDomaine}"></b> Domaine d'emploie 
+                    </div>
+                    </a>
+                </div>
+                 <div class="col-lg-4">
+                  <a style="text-decoration: none"  th:href="@{/listeCategorie}">
+                    <div class="alert couleur-warning text-center" >
+                        <i class="fa fa-list-alt fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  th:text="${nombreCategorie}"></b>
+                        
+                        Categorie d'Emploie
+                    </div>
+      		      </a>
+                </div>
+                 <div class="col-lg-4">
+                 <a style="text-decoration: none" th:href="@{/offre/listeOffre}">
+                    <div class=" alert couleur-danger text-center">
+                        <i class="fa fa-files-o fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  th:text="${nombreOffre}"> </b> Offres d'emploie
+
+                    </div>
+                    </a>
+                </div>
+               
+                <!--end quick info section -->
+            </div>
+            
+            <div class="row">
+                <!--quick info section -->
+                <div class="col-lg-3">
+                 <a style="text-decoration: none"  th:href="@{/index/listeCandidat}">
+                    <div class="alert couleur-primary text-center">
+                        <i class=" fa fa-list-ol fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  th:text="${nombreAbonne}"> </b> Liste Abonnés
+
+                    </div>
+                    </a>
+                </div>
+                 <!-- <div class="col-lg-3">
+                 <a style="text-decoration: none"  th:href="@{/index/listeFaq}">
+                    <div class="alert couleur-blue text-center">
+                        <i class="fa  fa-gift fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  ></b>Publicité
+                    </div>
+                   </a>
+                </div> -->
+                <div class="col-lg-3">
+                 <a style="text-decoration: none"  th:href="@{/ListePromotion}">
+                    <div class="alert couleur-warning text-center">
+                        <i class="fa fa-laptop fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  th:text="${ns}"></b> Service
+
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                 <a style="text-decoration: none"  th:href="@{/listeAdmin}">
+                    <div class="alert couleur-success text-center">
+                        <i class="fa  fa-pencil fa-3x"></i>&nbsp;<b  style="font-size: 24px;"  th:text="${nombreAdmin}"> </b> Administrateurs
+                    </div>
+                   </a>
+                </div>
+                <!--end quick info section -->
+            </div>
+     
+
+
+
+
+        </div>
+</body>
+</html>

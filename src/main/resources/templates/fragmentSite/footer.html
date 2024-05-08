@@ -6,11 +6,11 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="widget">
-                        <h3>It-21-Solution</h3>
+                        <h3>SMENGS </h3>
                         <ul>
-                            <li><a th:href="@{listeAppSite}">a propos</a></li>
-                            <li><a th:href="@{footerRencontre}">Nous rencontrer</a></li>
-                            <li><a th:href="@{footerEquipe}">Equipe</a></li>
+                            <li><a th:href="@{/apropos/listeAppSite}">a propos</a></li>
+                            <li><a th:href="@{/index/contact}">Nous rencontrer</a></li>
+                            <li><a th:href="@{/footerEquipe}">Equipe</a></li>
                                                
                         </ul>
                     </div>    
@@ -18,11 +18,9 @@
 
                 <div class="col-md-4 col-sm-6">
                     <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a th:href="@{footerFaq}">Faq</a></li>
-                            <li><a th:href="@{footerForum}">Forum</a></li>
-                            <li><a th:href="@{footerDocument}">Documentation</a></li>                          
+                        <h3>Domaine d'emploi</h3>
+                      <ul th:each="liste : ${listeDomaine}">
+                            <li><a  th:text="${liste.libelle_domaine}"></a></li>
                         </ul>
                     </div>    
                 </div><!--/.col-md-3-->
@@ -30,8 +28,8 @@
                 <div class="col-md-4 col-sm-6" >
                     <div class="widget">
                         <h3>Nos services</h3>
-                        <ul th:each="liste : ${listeSer}">
-                            <li><a th:href="@{footerService(id_ser=${liste.id_ser})}" th:text="${liste.titre_ser}"></a></li>
+                        <ul th:each="liste : ${ListePromotion}">
+                            <li><a  th:text="${liste.libelle_promo}"></a></li>
                            
        
                         </ul>
@@ -72,27 +70,5 @@
 	</div><!--/.top-bar-->
 
 
-<footer id="footer" class="midnight-blue" >
-         
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2015 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">bootstraptaste</a>. All Rights Reserved.
-                </div>
-                <!-- 
-                    All links in the footer should remain intact. 
-                    Licenseing information is available at: http://bootstraptaste.com/license/
-                    You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Gp
-                -->
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a th:href="@{homeSite}">Accueil</a></li>
-                        <li><a th:href="@{homeSite}">A propos</a></li>
-                       <!--  <li><a href="#">Faq</a></li> -->
-                        <li><a th:href="@{homeSite}">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->
+
     </div>

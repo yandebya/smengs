@@ -46,7 +46,16 @@
 									  
 									</div>
 								</div>
-  
+  							<div class="form-group" >
+								    	  <label>Categorie</label>
+                                           <select type="hidden" th:field="${categorie.id_cat}" class="form-control col-md-7 col-xs-12">
+													<option th:each="liste : ${listeCategorie}" 									
+															th:value="${liste.id_cat}"
+															th:text="${liste.libelle_cat}" >
+													</option>
+											</select> 
+								    	</div>  
+								    	
   
                                         
                                         <button type="submit" class="btn btn-primary">Submit Button</button>

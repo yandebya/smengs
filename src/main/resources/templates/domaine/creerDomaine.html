@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html lang="fr"  xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragment/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Domaine</title>
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+			 <div class="row">
+                 <!--  page header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Domaine</h1>
+                </div>
+                 <!-- end  page header -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           Domaine
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                        <div class="col-lg-12">
+                                    <form role="form" th:action="@{creationDomaine}" method="post" >
+                                        <div class="form-group">
+                                            <label>Libelle Domaine</label>
+                                            
+                                            <input type="hidden" th:field="${Domaine.id_domaine}"  >
+                                            <input class="form-control" th:field="${Domaine.libelle_domaine}" required="required">
+                                           
+                                        </div>
+                                        
+                                        
+                                    
+                                        
+                                        <button type="submit" class="btn btn-primary"> Valider</button>
+                                        <button type="reset" class="btn btn-success">Annuler</button>
+                                         <a th:href="@{/listeDomaine}"  class="btn btn-success">Liste</a>
+                                    </form>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+            
+
+        </div>
+</body>
+</html>

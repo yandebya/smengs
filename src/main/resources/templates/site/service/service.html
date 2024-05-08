@@ -9,28 +9,33 @@
 	<section id="services" class="service-item">
 	   <div class="container">
             <div class="center wow fadeInDown">
-                <h2>Services</h2>
-                <p class="lead">Avec TP-21-SOLUTION, Nous vous offrons des meilleurs services dans divers domaines.</p>
+                <h2><a>Domaine d'emploi</a></h2>
+               
             </div>
 
-            <div class="row">
+            <div class="row ">
 
-                <div class="col-sm-6 col-md-4" th:each="service : ${listeSer}">
-                    <div class="media services-wrap wow fadeInDown">
-                        <div class="pull-left">
-                            <img style="width: 300px; height: 150px;"
-                            th:src="@{getPhotiService(photiService=${service.photiService})}"
-                            class="img-responsive">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading" th:text=${service.titre_ser}></h3>
-                            <p th:text=${service.libelle_ser}> </p>
-                              <a th:href="@{footerService(id_ser=${service.id_ser})}" > détail...</a>
-                        </div>
-                        <div>
+                <div style="padding: 0px 75px; text-align: center;" class="col-sm-6 col-md-12 " >
+                   <div class="wow fadeInUp " th:each="liste,i : ${listeDomaine}">
+                              	 <a th:href="@{/index/listeOffreDomaine(id_domaine=${liste.id_domaine})}" type="button" class="btn btn-info btn-lg btn-block" th:text="${liste.libelle_domaine}">Block level button</a> 
+                              	 <br>
+                             </div>
+<!--                     <div class="media services-wrap wow fadeInDown"> -->
+<!--                         <div class="pull-left"> -->
+<!--                             <img style="width: 300px; height: 150px;" -->
+<!--                              th:src="@{getPhotiService(photiService=${service.photiService})}" --> 
+<!--                              class="img-responsive"> --> 
+<!--                         </div> -->
+<!--                         <div class="media-body"> -->
+<!--                             <h3 class="media-heading" th:text=${service.titre_ser}></h3> -->
+<!--                             <p th:text=${service.libelle_ser}> </p> -->
+<!--                              <b>Categorie: </b><span th:text=${service.categorie.libelle_cat}> </span><br> -->
+<!--                               <a th:href="@{footerService(id_ser=${service.id_ser})}" > détail...</a> -->
+<!--                         </div> -->
+<!--                         <div> -->
                         	
-                        </div>
-                    </div>
+<!--                         </div> -->
+<!--                     </div> -->
                 </div>
 
                                                               

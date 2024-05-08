@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-layout-decorate="~{fragmentSite/layout}">
+<head>
+<meta charset="utf-8">
+<title>home</title>
+</head>
+<body data-layout-fragment="contentSite"  >
+
+	<section id="services" class="service-item">
+	   <div class="container">
+            <div class="center wow fadeInDown">
+                <h2><a>Offres</a></h2>
+             
+            </div>
+
+            <div class="row">
+<div style="font-size: 48px; color:#e8b47b; padding-bottom:20%; text-align:center;"  th:if="${listeOffre.empty}">Aucune offre</div>
+
+               <div class="col-lg-4" th:each="liste : ${listeOffre}" >
+               
+                    <div class="panel panel-info wow fadeInDown ">
+                        <div class="panel-heading"  th:text="${liste.categorie.libelle_cat}" >
+                        
+                        </div>
+                        <div class="panel-body" style="background-color:#fff;">
+                         <div class="img-responsive media-object imgyan wow fadeInUp"  th:src="@{/offre/getPhoto_off(photo_off=${liste.photo_off})}"><img style="width:100%; height:125px;" alt="" th:src="@{/offre/getPhoto_off(photo_off=${liste.photo_off})}"></div><br>
+
+												<p th:text="${liste.libelle_off}"></p> 
+
+<!--                             <p th:text="${liste.photo_off}"></p>  -->
+<!--                                <a  th:href="@{/images/cv_yandebya_rota.pdf}"   width="100%" height="100px">pdf</a>  -->
+<!--                                 <a class="fancybox" th:href="@{../getPhoto_off(photo_off=${liste.photo_off})}"><img class="img-circle profile_img" th:src="@{/getPhoto_off(photo_off=${liste.photo_off})}"width="80" height="80"   alt=""></a>  -->
+                             
+     	 <!--  <embed  src="/images/cv_yandebya_rota.pdf"   width="100%" height="100px" type="application/pdf"> -->
+  
+<!--    											<a th:href="@{/getPhoto_off(photo_off=${liste.photo_off})}"> -->
+<!--                                                 <img th:src="@{/getPhoto_off(photo_off=${liste.photo_off})}"width="80" height="80"> -->
+<!--                                               </a> -->
+  </div>
+                        <div class="panel-footer" >
+                           <a th:href="@{/listeOffreDetail(id_off=${liste.id_off})}"  > detail</a>
+                        </div>
+                    </div>
+                </div>
+                                                              
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+
+	
+	
+</body>
+</html>

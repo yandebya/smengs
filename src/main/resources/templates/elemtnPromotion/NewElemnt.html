@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>elmt</title>
+</head>
+<body>
+  <div id="page-wrapper" data-layout-fragment="content">
+			 <div class="row">
+                 <!--  page header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables</h1>
+                </div>
+                 <!-- end  page header -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Service
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                        <div class="col-lg-12">
+                                    <form role="form" th:action="@{creationeltPromotion}" method="post" >
+									
+									
+									 <div class="form-group">
+									 <input type="hidden" th:field="${elementPromo.id_elt}">
+                                       
+                                        <div class="form-group">
+                                            <label>Sous titre</label>
+                                            <input class="form-control" th:field="${elementPromo.libelle_elt}"/>
+                                           
+                                        </div>
+									</div>
+									
+									<!-- <div class="item form-group">
+										<div class="centrer">
+											<label>Photo </label>
+										</div>
+										<div class="centrer">
+
+											<input type="file" id="image" name="picture" />
+
+										</div>
+									</div> -->
+
+
+
+									<button type="submit" class="btn btn-primary">Submit Button</button>
+                                        <button type="reset" class="btn btn-success">Reset Button</button>
+                                    </form>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+            
+
+        </div>
+</body>
+</html>

@@ -11,23 +11,42 @@
 			
 
 			<div style="margin: 50px;" class="clients-area center wow fadeInDown">
-				<h2>Qui sommes nous?</h2>
-				<p class="lead" >Nous sommes des freelance, on developpe des site internet, des application mobile, offrons des formation, developpons des logiciel sur mesure ou d'autres services en informatique</p>
+				<h2><a>Qui sommes nous?</a></h2>
+				
 			</div>
 
-			<div class="row" >
-				<div class="col-md-4 wow fadeInDown" th:each="liste : ${listeApp}">
-					<div class="clients-comments text-center">
+	
+			<section id="middle">
+        <div class="container">
+            <div class="row" th:each="liste : ${listeApropos1}">
+                <div class="col-sm-12 wow fadeInDown">
+                    <div class="skill" th:text="${liste.libelle_propos1}">
+                       
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						
-						<a th:href="@{getImage_app(image_app=${liste.image_app})}" rel="prettyPhoto"> <img th:src="@{getImage_app(image_app=${liste.image_app})}" class="img-circle" alt=""></a>
-						<h2 th:text="${liste.titre_bloc_app}"></h2>
-						<h3 th:text="${liste.infos_app}"></h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						
-					</div>
-				</div>
-			
-			</div>
-			
+                        
+                    </div>
+
+                </div><!--/.col-sm-6-->
+
+               <!--  <div class="col-sm-6 wow fadeInDown">
+                    <div class="accordion">
+                        
+                        <div class="panel-group" id="accordion1">
+                         
+ 								<img style="width: 90%; " alt="" th:src="@{getImage_propos1(image_propos1=${liste.image_propos1})}">
+ 							
+                        </div>/#accordion1
+                        
+                    </div>
+                </div> -->
+
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section>
 			
 			<hr>
 			<div class="team">
@@ -36,8 +55,9 @@
 					<div class="col-md-4 col-sm-6 " th:each="liste : ${listeApp2}">	
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
-								<div class="pull-left">
-									<a href="#"><img class="media-object imgyan" th:src="@{getImage_app2(image_app2=${liste.image_app2})}" alt=""></a>
+								<!-- <div class="pull-left"> -->
+								<div class="">
+									<a href="#"><img class="img-responsive media-object imgyan" th:src="@{getImage_app2(image_app2=${liste.image_app2})}" style="width: 100%; height:200px" alt=""></a>
 								</div>
 								<div class="media-body">
 										<br>
@@ -51,21 +71,6 @@
 					</div><!--/.col-lg-4 -->
 					
 					
-					<!-- <div class="col-md-4 col-sm-6 ">	
-						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-							<div class="media">
-								<div class="pull-left">
-									<a href="#"><img class="media-object imgyan" src="/images/tum-strategy.jpg" alt=""></a>
-								</div>
-								<div class="media-body">
-									<h4>Passion</h4>
-									
-									
-								</div>
-							</div>/.media
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-						</div>
-					</div>/.col-lg-4	 -->
 					
 					<!-- <div class="col-md-4 col-sm-6 ">	
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
